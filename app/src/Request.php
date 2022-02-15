@@ -1,15 +1,15 @@
 <?php
 namespace Todosoft;
 
-include ('../vendor/autoload.php');
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/InteractsWithInput.php';
 
-use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
-use Symfony\Component\HttpFoundation\ParameterBag;
 use Illuminate\Support\Arr;
+use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class Request extends SymfonyRequest
 {
-    use \Illuminate\Http\Concerns\InteractsWithInput;
+    use InteractsWithInput;
 
     /**
      * Create a new Illuminate HTTP request from server variables.
@@ -52,9 +52,8 @@ class Request extends SymfonyRequest
      */
     protected function getInputSource()
     {
-        return in_array($this->getRealMethod(), ['GET', 'HEAD']) ? $this->query : $this->request;
+        return in_array( $this->getRealMethod(), ['GET', 'HEAD'] ) ? $this->query : $this->request;
     }
-
 
     /**
      * Check if an input element is set on the request.
@@ -62,9 +61,9 @@ class Request extends SymfonyRequest
      * @param  string  $key
      * @return bool
      */
-    public function __isset($key)
+    public function __isset( $key )
     {
-        return ! is_null($this->__get($key));
+        return ! is_null( $this->__get( $key ) );
     }
 
     /**
@@ -73,9 +72,9 @@ class Request extends SymfonyRequest
      * @param  string  $key
      * @return mixed
      */
-    public function __get($key)
+    public function __get( $key )
     {
-        return Arr::get($this->all(), $key);
+        return Arr::get( $this->all(), $key );
     }
 
 }
