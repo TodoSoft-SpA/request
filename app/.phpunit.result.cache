@@ -1,1 +1,1 @@
-{"version":1,"defects":{"IndexTest::testGet":4,"IndexTest::testPost":4},"times":{"IndexTest::testGet":0.009,"IndexTest::testPost":0.001}}
+{"version":1,"defects":{"IndexTest::testGet":4,"IndexTest::testPost":4},"times":{"IndexTest::testGet":0.021,"IndexTest::testPost":0.002}}
