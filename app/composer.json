@@ -1,0 +1,22 @@
+{
+    "name": "todosoft/request",
+    "description": "Paquete que ayuda a manejar todos los componentes de un peticion al servidor web",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ToDoSoft\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcos Pulgar",
+            "email": "marcos.pulgar.a@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/http-foundation": "6.1.x-dev",
+        "illuminate/collections": "10.x-dev"
+    }
+}
